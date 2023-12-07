@@ -18,6 +18,8 @@ services:
     command: --default-authentication-plugin=mysql_native_password
   app:
     build: ./node
+    volumes:
+      - ./node:/app
     depends_on:
       db:
         condition: service_healthy
